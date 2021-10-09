@@ -1,4 +1,4 @@
-package com.example.hackathon_project;
+package com.example.hackathon_project.api;
 
 import java.util.ArrayList;
 
@@ -11,9 +11,9 @@ public interface API {
     String BASE_URL = "https://maps.googleapis.com/maps/api/";
 
     @GET("place/nearbysearch/json")
-    Call<JSONObject> getNearbyHome(@Query("location") String location, 
+    Call<JSONObject> getNearby(@Query("location") String location, 
     @Query("type") String type,  @Query("key") String key);
 
-    @GET("place/autocomplete/json")
-    Call<JSONObject> getAutoComplete(@Query("input") String input, @Query("key") String key);
+    @GET("place/textsearch/json")
+    Call<JSONObject> getAutoComplete(@Query("query") String query, @Query("key") String key);
 }
