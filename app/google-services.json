@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "597118260993",
+    "firebase_url": "https://adg-internal-hack-project-default-rtdb.firebaseio.com",
+    "project_id": "adg-internal-hack-project",
+    "storage_bucket": "adg-internal-hack-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597118260993:android:8c3f6630deadb27117ed00",
+        "android_client_info": {
+          "package_name": "com.example.hackathon_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597118260993-god22p8dcbn5n235ft783m9aln9idv12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi_crPd8bj6CxrdgnUekfXstodctrhoZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597118260993-god22p8dcbn5n235ft783m9aln9idv12.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
