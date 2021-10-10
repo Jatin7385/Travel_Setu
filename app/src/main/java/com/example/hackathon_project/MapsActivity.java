@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.hackathon_project.models.PlaceModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -19,9 +21,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     GoogleMap googlemap;
     Button back;
+    PlaceModel placeModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("Hello");
         setContentView(R.layout.activity_maps);
 
         back = findViewById(R.id.map_back_btn);
@@ -42,8 +46,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(@NonNull GoogleMap googleMap) {
         googlemap = googleMap;
 
-        LatLng Maharashtra = new LatLng(19.7515 , 75.7139);
-        googlemap.addMarker(new MarkerOptions().position(Maharashtra).title("Maharashtra"));
+        Intent i = getIntent();
+        placeModel = (PlaceModel) i.getSerializableExtra("PlaceModel");
+        String lat,lng,name;
+        Double l,l1;
+        lat = placeModel.getLat();
+        lng = placeModel.getLng();
+        l = Double.parseDouble(lat);
+        l1 = Double.parseDouble(lng);
+        name = placeModel.getName();
+
+        LatLng Maharashtra;
+        System.out.println(lat + " , " + lng);
+        if(!lat.equals(null) && !lng.equals(null)) {
+            Maharashtra = new LatLng(l, l1);
+        }
+        else
+            {
+                name = "Maharashtra";
+                Maharashtra = new LatLng(19.7515,75.7139);
+            }
+        googlemap.addMarker(new MarkerOptions().position(Maharashtra).title(name));
         googlemap.moveCamera(CameraUpdateFactory.newLatLng(Maharashtra));
     }
 }

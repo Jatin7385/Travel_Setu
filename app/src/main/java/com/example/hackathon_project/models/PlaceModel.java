@@ -1,16 +1,22 @@
 package com.example.hackathon_project.models;
 
-public class PlaceModel {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class PlaceModel implements Serializable {
 
     private String name;
     private String image;
     private String lat;
     private String lng;
 
-    public AutoCompModel(String name, String image, String lat, String lng) {
+    public PlaceModel() {
+    }
+
+    public PlaceModel(String name, String image, String lat, String lng) {
         this.name = name;
         this.image = image;
-        this.lat = lst;
+        this.lat = lat;
         this.lng = lng;
     }
 
@@ -18,15 +24,15 @@ public class PlaceModel {
 
     public String getImage() { return image; }
 
-    public String setName(String name) { this.name = name; }
+    public void setName(String name) { this.name = name; }
 
-    public String setImage(String image) { this.image = image; }
+    public void setImage(String image) { this.image = image; }
 
     public String getLat() { return lat; }
 
     public String getLng() { return lng; }
 
-    public String setLat(String name) { this.lat = lat; }
+    public void setLat(String name) { this.lat = lat; }
 
-    public String setLng(String image) { this.lng = lng; }
+    public void setLng(String image) { this.lng = lng; }
 }

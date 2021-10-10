@@ -1,3 +1,4 @@
+/*
 package com.example.hackathon_project.api;
 
 import java.util.ArrayList;
@@ -16,4 +17,7 @@ public interface API {
 
     @GET("place/textsearch/json")
     Call<JSONObject> getAutoComplete(@Query("query") String query, @Query("key") String key);
+
 }
+
+ */

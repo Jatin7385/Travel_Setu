@@ -1,14 +1,24 @@
 package com.example.hackathon_project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+//import com.example.hackathon_project.adapters.NearbyAdapter;
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
@@ -58,6 +68,47 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         Button maps;
+        TabLayout tabLayout;
+        ViewPager viewPager;
+
+        tabLayout = view.findViewById(R.id.tab_layout);
+        viewPager = view.findViewById(R.id.view_pager);
+
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        arrayList.add("All");
+        arrayList.add("Popular");
+        arrayList.add("Nearby");
+        arrayList.add("Recommended");
+
+        tabLayout.addTab(tabLayout.newTab().setText("All"));
+        tabLayout.addTab(tabLayout.newTab().setText("Popular"));
+        tabLayout.addTab(tabLayout.newTab().setText("Nearby"));
+        tabLayout.addTab(tabLayout.newTab().setText("Recommended"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        final MainAdapter adapter = new MainAdapter(getContext(),getFragmentManager(),tabLayout.getTabCount());
+
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         maps = view.findViewById(R.id.btn_map);
         maps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,5 +118,44 @@ public class HomeFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private class MainAdapter extends FragmentPagerAdapter {
+
+        private Context myContext;
+        private int totalTabs;
+
+        public MainAdapter(Context context, FragmentManager fm , int totalTabs) {
+            super(fm);
+            myContext = context;
+            this.totalTabs = totalTabs;
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+
+            switch (position){
+                case 0:
+                    AllFragment allFragment = new AllFragment();
+                    return allFragment;
+                case 1:
+                    PopularFragment popularFragment = new PopularFragment();
+                    return popularFragment;
+                case 2:
+                    NearbyFragment nearbyFragment  = new NearbyFragment();
+                    return nearbyFragment;
+                case 3:
+                    RecommendedFragment recommendedFragment = new RecommendedFragment();
+                    return recommendedFragment;
+                default:
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return totalTabs;
+        }
     }
 }

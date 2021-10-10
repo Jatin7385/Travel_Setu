@@ -1,4 +1,6 @@
+/*
 package com.example.hackathon_project.adapters;
+
 
 
 public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.RecyclerViewHolder>{
@@ -41,3 +43,5 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.RecyclerVi
         notifyDataSetChanged();
     }
 }
+
+ */

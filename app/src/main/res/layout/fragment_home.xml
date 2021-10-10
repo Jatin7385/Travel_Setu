@@ -44,6 +44,7 @@
             android:layout_marginTop="29dp"
             android:layout_marginStart="15dp"
             android:text="Search"
+            android:fontFamily="@font/helvetica_bold"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -69,6 +70,33 @@
             app:layout_constraintHorizontal_bias="0.258"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tab_layout"
+            app:tabTextColor="@color/black"
+            app:tabIndicatorColor="#7698ad"
+            app:tabSelectedTextColor="#7698ad"
+            app:tabBackground="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextTextPersonName"
+            app:layout_constraintVertical_bias="0.044"
+            app:layout_constraintVertical_weight="1" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout"
+            app:layout_constraintVertical_weight="1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
