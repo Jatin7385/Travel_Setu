@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/profile"
     tools:context=".ExploreFragment">
 
     <ScrollView
@@ -38,7 +38,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/welcome_rounded"
+            android:background="@drawable/explore_rounded"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,10 @@
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/welcome_rounded"
+                android:outlineAmbientShadowColor="#808080"
+                android:shadowColor="#808080"
+                android:elevation="0dp"
+                android:background="@drawable/explore_rounded"
                 android:drawableLeft="@drawable/ic_baseline_search_24"
                 android:paddingLeft="20dp" />
 
@@ -91,7 +94,7 @@
             android:layout_marginStart="20dp"
             android:padding = "20dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/welcome_rounded"
+            android:background="@drawable/explore_rounded"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView9"
@@ -120,7 +123,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="100dp"
-            android:background="@drawable/welcome_rounded"
+            android:background="@drawable/explore_rounded"
             android:padding="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

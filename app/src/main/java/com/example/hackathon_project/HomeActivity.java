@@ -18,7 +18,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         navigationView = findViewById(R.id.bottom_nav);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.body_container,new HomeFragment()).commit();
@@ -45,5 +44,10 @@ public class HomeActivity extends AppCompatActivity {
                 return  true;
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        System.exit(0);
     }
 }

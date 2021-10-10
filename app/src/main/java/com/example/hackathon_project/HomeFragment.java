@@ -108,15 +108,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
-        maps = view.findViewById(R.id.btn_map);
-        maps.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(),MapsActivity.class);
-                startActivity(intent);
-            }
-        });
         return view;
     }
 
