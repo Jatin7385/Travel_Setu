@@ -7,6 +7,17 @@
     android:background="@drawable/splash_screen_gradient_bg"
     tools:context=".SignUpActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,11 +55,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TS_signup" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
+        android:layout_width="133dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="40dp"
+        android:foregroundGravity="center"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="4dp"
+        android:clickable="true"
+        android:src="@drawable/profilepicc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TravelSetu_signup" />
+
     <EditText
         android:id="@+id/edt_first_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
         android:paddingLeft="15dp"
@@ -61,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TravelSetu_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/user_image" />
 
     <EditText
         android:id="@+id/edt_last_name"

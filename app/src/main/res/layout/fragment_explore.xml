@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile"
+    android:background="@drawable/splash_screen_gradient_bg"
     tools:context=".ExploreFragment">
 
     <ScrollView
@@ -24,7 +24,7 @@
             android:text="Explore"
             android:fontFamily="@font/helvetica_bold"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.101"
@@ -78,7 +78,7 @@
             android:layout_marginTop="15dp"
             android:text="Places"
             android:layout_marginStart="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/helvetica_bold"
             android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"

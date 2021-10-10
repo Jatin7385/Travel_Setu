@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hackathon_project.models.PlaceModel;
@@ -83,6 +84,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         List<LatLng> latlng = new ArrayList<>();
         latlng.add(latLng);
         addHeatMap(latlng);
+
+
         googlemap.addMarker(new MarkerOptions().position(latLng).title(name));
         googlemap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,15f));
     }

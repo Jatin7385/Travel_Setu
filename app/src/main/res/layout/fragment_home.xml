@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/splash_screen_gradient_bg"
     tools:context=".HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,7 +53,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="19dp"
             android:paddingLeft="15dp"
-            android:hint="Search"
+            android:hint=""
             android:paddingVertical="10dp"
             android:ems="10"
             android:inputType="textPersonName"
