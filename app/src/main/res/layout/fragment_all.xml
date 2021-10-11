@@ -10,28 +10,58 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/All_Places_Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/helvetica_bold"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:layout_marginLeft="21dp"
-        android:text="All Places" />
+        <TextView
+            android:id="@+id/All_Places_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_bold"
+            android:text="All Places"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_all_places"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:orientation="horizontal"
             android:overScrollMode="never"
             android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/All_Places_Text"
-            tools:listitem="@layout/card_view_home" />
+            tools:listitem="@layout/card_view_places" />
+
+        <TextView
+            android:id="@+id/All_Recommended_Places_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_bold"
+            android:text="Recommended Places"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_all_places" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_all_recommended_places"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:overScrollMode="never"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/All_Recommended_Places_Text"
+            tools:listitem="@layout/card_view_places" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
