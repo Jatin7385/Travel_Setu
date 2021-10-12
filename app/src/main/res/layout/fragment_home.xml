@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_screen_gradient_bg"
+    android:background="@color/white"
     tools:context=".HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3D7692"
+            android:background="@drawable/splash_screen_gradient_bg"
             android:fontFamily="@font/playfair_display_regular"
             android:paddingLeft="29dp"
             android:paddingTop="37dp"
@@ -53,11 +53,12 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="19dp"
             android:paddingLeft="15dp"
-            android:hint=""
+            android:hint="Search"
+            android:textColorHint="@color/black"
             android:paddingVertical="10dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:background="@drawable/explore_rounded"
+            android:background="@drawable/grey_rounded_edtext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.258"
             app:layout_constraintStart_toStartOf="parent"

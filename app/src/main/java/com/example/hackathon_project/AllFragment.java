@@ -71,13 +71,11 @@ public class AllFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_all, container, false);
 
-        RecyclerView recyclerViewAll,recommended;
+        RecyclerView recyclerViewAll;
 
         recyclerViewAll = view.findViewById(R.id.recycler_view_all_places);
-        recommended = view.findViewById(R.id.recycler_view_all_recommended_places);
 
         recyclerViewAll.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        recommended.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         List<PlaceModel> list = new ArrayList<>();
         list.add(new PlaceModel("Agra", "drawable/tj.jpg", "27.1767","78.0081"));
@@ -85,14 +83,6 @@ public class AllFragment extends Fragment {
         list.add(new PlaceModel("Mumbai", "drawable/tj.jpg", "19.0760","72.8777"));
         list.add(new PlaceModel("Punjab", "drawable/tj.jpg", "31.1471", "75.3412"));
         recyclerViewAll.setAdapter(new PlacesAdapter(getContext(),list));
-
-
-        List<PlaceModel> list1 = new ArrayList<>();
-        list1.add(new PlaceModel("Taj Mahal", "drawable/tj.jpg", "27.1751","78.0421"));
-        list1.add(new PlaceModel("Golden Temple", "drawable/tj.jpg", "31.6200","74.8765"));
-        list1.add(new PlaceModel("Red Fort", "drawable/tj.jpg", "28.6562","77.2410"));
-        list1.add(new PlaceModel("Amer Fort", "drawable/tj.jpg", "26.9855","75.8513"));
-        recommended.setAdapter(new PlacesAdapter(getContext(), list1));
 
         return view;
     }

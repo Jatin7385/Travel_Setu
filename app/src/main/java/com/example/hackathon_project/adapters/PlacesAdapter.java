@@ -2,8 +2,11 @@ package com.example.hackathon_project.adapters;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,17 +39,18 @@ public class PlacesAdapter extends RecyclerView.Adapter<ViewHolderPlaces> {
 
     public ViewHolderPlaces onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.explore_cardview,parent,false);
+        View view = inflater.inflate(R.layout.card_view_places,parent,false);
         return new ViewHolderPlaces(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewHolderPlaces holder, int position) {
         holder.text.setText(list.get(position).getName().toString().trim());
-
+        holder.image.setImageDrawable(context.getResources().getDrawable(R.drawable.tj));
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(position);
                 Intent intent = new Intent(context, MapsActivity.class);
                 intent.putExtra("PlaceModel",list.get(position));
                 context.startActivity(intent);
@@ -63,14 +67,14 @@ public class PlacesAdapter extends RecyclerView.Adapter<ViewHolderPlaces> {
 
 class ViewHolderPlaces extends RecyclerView.ViewHolder {
     TextView text;
-    Button search;
+    ImageView image;
     CardView card;
 
     public ViewHolderPlaces(@NonNull @NotNull View itemView) {
         super(itemView);
-        card = itemView.findViewById(R.id.explore_card);
-        text = itemView.findViewById(R.id.explore_textofPlace);
-        search = itemView.findViewById(R.id.explore_search_cv);
+        card = itemView.findViewById(R.id.cardview_places);
+        text = itemView.findViewById(R.id.place_name);
+        image = itemView.findViewById(R.id.places_img);
     }
 }
 

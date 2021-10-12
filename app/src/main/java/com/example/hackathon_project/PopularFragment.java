@@ -3,10 +3,18 @@ package com.example.hackathon_project;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.hackathon_project.adapters.PlacesAdapter;
+import com.example.hackathon_project.models.PlaceModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +67,21 @@ public class PopularFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_popular, container, false);
+        View view =  inflater.inflate(R.layout.fragment_popular, container, false);
+
+        RecyclerView recyclerViewPopular;
+
+        recyclerViewPopular = view.findViewById(R.id.recycler_view_popular_places);
+
+        recyclerViewPopular.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        List<PlaceModel> list = new ArrayList<>();
+        list.add(new PlaceModel("Agra", "drawable/tj.jpg", "27.1767","78.0081"));
+        list.add(new PlaceModel("Delhi", "drawable/tj.jpg", "28.7041","77.1025"));
+        list.add(new PlaceModel("Mumbai", "drawable/tj.jpg", "19.0760","72.8777"));
+        list.add(new PlaceModel("Punjab", "drawable/tj.jpg", "31.1471", "75.3412"));
+        recyclerViewPopular.setAdapter(new PlacesAdapter(getContext(),list));
+
+        return view;
     }
 }
